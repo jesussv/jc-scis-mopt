@@ -1,0 +1,67 @@
+name: Deploy to Cloud Run
+
+on:
+  push:
+    branches: ["main", "develop"]
+
+env:
+  PROJECT_ID: "evocative-reef-133021"
+  REGION: "us-central1"
+
+  SERVICE_DEV: "c-location-ingest-dev"
+  SERVICE_PROD: "c-location-ingest"
+
+  SERVICE_DIR: "jc-pt-mopt"
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: read
+      id-token: write
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Debug GitHub context
+        run: |
+          echo "GITHUB_REPOSITORY=${GITHUB_REPOSITORY}"
+          echo "GITHUB_REF_NAME=${GITHUB_REF_NAME}"
+          echo "GITHUB_ACTOR=${GITHUB_ACTOR}"
+          echo "GITHUB_EVENT_NAME=${GITHUB_EVENT_NAME}"
+
+      - name: Google Auth (Workload Identity Federation)
+        uses: google-github-actions/auth@v2
+        with:
+          workload_identity_provider: "projects/846193025977/locations/global/workloadIdentityPools/github-pool/providers/github-provider"
+          service_account: "jc-cloudrun-pt@evocative-reef-133021.iam.gserviceaccount.com"
+
+      - name: Setup gcloud
+        uses: google-github-actions/setup-gcloud@v2
+
+      - name: Select service by branch
+        run: |
+          if [ "${GITHUB_REF_NAME}" = "develop" ]; then
+            echo "SERVICE=${{ env.SERVICE_DEV }}" >> $GITHUB_ENV
+            echo "ENV_NAME=Development" >> $GITHUB_ENV
+          else
+            echo "SERVICE=${{ env.SERVICE_PROD }}" >> $GITHUB_ENV
+            echo "ENV_NAME=Production" >> $GITHUB_ENV
+          fi
+
+      - name: Deploy to Cloud Run (Buildpacks - no Docker)
+        working-directory: ${{ env.SERVICE_DIR }}
+        run: |
+          gcloud run deploy "${{ env.SERVICE }}" \
+            --source "services/JC.LocationIngest" \
+            --project "${{ env.PROJECT_ID }}" \
+            --region "${{ env.REGION }}" \
+            --platform managed \
+            --allow-unauthenticated \
+            --port 8080 \
+            --timeout 300 \
+            --memory 512Mi \
+            --set-env-vars ASPNETCORE_ENVIRONMENT=Development
+
+       
