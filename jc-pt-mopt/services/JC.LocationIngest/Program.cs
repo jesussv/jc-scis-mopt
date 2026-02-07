@@ -77,6 +77,22 @@ builder.WebHost.UseUrls($"http://0.0.0.0:{port}");
 
 var app = builder.Build();
 
+//CORS
+builder.Services.AddCors(options =>
+{
+    options.AddPolicy("scis", p =>
+        p.SetIsOriginAllowed(origin =>
+        {
+            if (string.IsNullOrWhiteSpace(origin)) return false;
+            return origin.StartsWith("http://localhost:") || origin.StartsWith("https://localhost:");
+        })
+        .AllowAnyHeader()
+        .AllowAnyMethod()
+        .AllowCredentials()
+    );
+});
+
+
 if (app.Environment.IsDevelopment())
 {
     app.UseSwagger();
