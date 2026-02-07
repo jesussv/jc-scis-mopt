@@ -71,38 +71,11 @@ builder.Services.AddAuthentication(JwtBearerDefaults.AuthenticationScheme)
 
 builder.Services.AddAuthorization();
 
-//CORS
-Builder.Services.AddCors(options =>
-{
-    options.AddPolicy("scis", p =>
-        p.SetIsOriginAllowed(origin =>
-        {
-            if (string.IsNullOrWhiteSpace(origin)) return false;
-            return origin.StartsWith("http://localhost:") || origin.StartsWith("https://localhost:");
-        })
-        .AllowAnyHeader()
-        .AllowAnyMethod()
-        .AllowCredentials()
-    );
-})
-
 // Cloud Run + Local
 var port = Environment.GetEnvironmentVariable("PORT") ?? "8080";
 builder.WebHost.UseUrls($"http://0.0.0.0:{port}");
 
-
 var app = builder.Build();
-
-//Activa CORS
-app.UseCors("scis");
-
-app.UseSwagger();
-app.UseSwaggerUI(c =>
-{
-    c.SwaggerEndpoint("/swagger/v1/swagger.json", "JC.LocationIngest v1");
-    c.RoutePrefix = "swagger"; // https://tu-url/swagger
-});
-
 
 if (app.Environment.IsDevelopment())
 {
