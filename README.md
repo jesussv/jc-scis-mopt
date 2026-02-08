@@ -699,7 +699,7 @@ jobs:
 - **Cloud Logging:** logs de Cloud Run (stdout/stderr + logs estructurados).
 - **Error Reporting:** agrupa excepciones y muestra “top errors” por servicio/revisión.
 - **Cloud Trace:** traza requests end-to-end para ver cuellos de botella y fallos.
-- **(Opcional recomendado) OpenTelemetry:** estandariza trace/span y correlación entre servicios.
+- **OpenTelemetry:** (Google lo habilita automáticamente en mi caso) estandariza trace/span y correlación entre servicios.
 
 ---
 
