@@ -503,8 +503,8 @@ Después del deploy a Staging:
 **Qué hace el pipeline actual**
 - Push a `develop` → despliega a **Cloud Run Dev** (`c-location-ingest-dev`)
 - Push a `main` → despliega a **Cloud Run Prod** (`c-location-ingest`)
-- Usa **Workload Identity Federation (OIDC)** (sin llaves JSON) ✅
-- Despliega con **Buildpacks** usando `--source` (sin Dockerfile) ✅
+- Usa **Workload Identity Federation (OIDC)** 
+- Despliega con **Buildpacks** usando `--source` 
 
 **Por qué esto es bueno**
 - Elimina manejo de credenciales (seguridad correcta).
