@@ -117,7 +117,7 @@ gcloud run services describe c-location-ingest-dev \
 ✅ Login seguro • ✅ Entradas/Salidas • ✅ Ajustes • ✅ Transferencias • ✅ Stock por bodega • ✅ Movimientos
 
 <p align="center">
-  <a href="https://drive.google.com/file/d/1As7YoFjR2aEGx0lt0hOshhIq4LVGYQHV/view?usp=sharing">
+  <a href="https://drive.google.com/file/d/1z9oUz4_37LK8OXjMwhlIJ3tnCoPRWCXf/view?usp=drivesdk">
     <img src="https://img.shields.io/badge/📥%20DESCARGAR%20APP-Releases-brightgreen?style=for-the-badge" />
   </a>
 </p>
