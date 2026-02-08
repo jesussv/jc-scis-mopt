@@ -40,6 +40,8 @@
    </p>
 
 3. Creamos una nueva base de datos y abrimos el archivo `backup_schema.sql` con Bloc de notas u otro editor para copiar el contenido y pegarlo en el editor.
+   📄 **Base de datos (PostgreSQL):** [Descargar / Ver `DataBase_schema.sql`](https://github.com/jesussv/jc-scis-mopt/blob/DataBase/DataBase_schema.sql)
+
 
    <p align="center">
      <img src="https://github.com/jesussv/jc-pt-mopt/blob/main/bd.jpg" width="720" />
