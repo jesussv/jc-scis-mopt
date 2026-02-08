@@ -298,7 +298,7 @@ Scrum me sirve porque tengo un **MVP con fecha**, fases claras y necesito **entr
 
 ## 🔄 Cómo aseguro la sincronización Backend + Frontend + UX (sin bloqueos lo principal)
 
-El objetivo no es “hacer reuniones por hacerlas”, sino ejecutar **las mínimas necesarias** para sincronizar dependencias y mantener el avance continuo.
+El objetivo no es hacer reuniones por hacerlas, sino ejecutar **las mínimas necesarias** para sincronizar dependencias y mantener el avance continuo.
 
 ### ✅ Principios que evitán bloqueos
 
@@ -480,7 +480,7 @@ Se ejecuta en cada PR para impedir que entre “basura”:
 - ✅ Build/Compile (backend + Flutter)
 - ✅ (Opcional rápido) análisis estático / seguridad básica
 
-> **Regla:** si falla aquí, **no se mergea**.
+> **Regla:** si falla aquí, **no se hace merge**.
 
 ---
 
