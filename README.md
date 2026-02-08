@@ -47,7 +47,8 @@
      <img src="https://github.com/jesussv/jc-pt-mopt/blob/main/bd.jpg" width="720" />
    </p>
 
-## 4. 📥 Descarga de proyectos (Repositorios)
+### 4. 📥 Descarga de proyectos (Repositorios)
+---
 ### 📁 Estructura del repositorio (Ramas)
 
 Este repositorio está organizado por ramas para separar claramente **Frontend (Flutter)**, **Backend (.NET 8 Minimal APIs)** y **Esquema de Base de Datos**.
