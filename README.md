@@ -48,7 +48,39 @@
    </p>
 
 4. Descargamos el proyecto adjunto.
+## 📁 Estructura del repositorio (Ramas)
 
+Este repositorio está organizado por ramas para separar claramente **Frontend (Flutter)**, **Backend (.NET 8 Minimal APIs)** y **Esquema de Base de Datos**.
+
+### 🔗 Enlaces rápidos
+- 🗄️ **Base de Datos (Schema PostgreSQL):** [DataBase branch](https://github.com/jesussv/jc-scis-mopt/tree/DataBase)
+- 🧩 **Backend + Integración (Desarrollo):** [develop branch](https://github.com/jesussv/jc-scis-mopt/tree/develop)
+- 📱 **Frontend (Flutter):** [scis-frontend branch](https://github.com/jesussv/jc-scis-mopt/tree/scis-frontend)
+
+---
+
+## 🧭 Detalles de cada rama
+
+### 🗄️ `DataBase`
+Contiene el **script del esquema** y artefactos relacionados a base de datos.
+- 📄 Esquema principal: [`DataBase_schema.sql`](https://github.com/jesussv/jc-scis-mopt/blob/DataBase/DataBase_schema.sql)
+
+### ⚙️ `develop`
+Rama de trabajo para el **backend** y la integración general del sistema.
+- Contiene el proyecto **ASP.NET Core Minimal APIs (.NET 8)** y configuración para ejecución/despliegue.
+
+### 📱 `scis-frontend`
+Rama dedicada al **frontend móvil en Flutter**.
+- UI, navegación, consumo de API y componentes del cliente móvil y web.
+
+---
+
+## ✅ Flujo recomendado de trabajo (Git)
+- Trabajar features desde `develop`: `feature/<nombre>`
+- Integrar vía Pull Request hacia `develop`
+- Promover a `main` cuando sea release/producción
+
+---
 ## Deploy a Google Cloud Run
 
 > Este deploy aplica para el **Backend (ASP.NET Core Minimal APIs .NET 8)**.
@@ -144,38 +176,7 @@ gcloud run services describe c-location-ingest-dev \
   <img src="https://github.com/jesussv/jc-pt-mopt/blob/main/WEB3.png" width="600" />
 </p>
 
-## 📁 Estructura del repositorio (Ramas / Áreas)
-
-Este repositorio está organizado por ramas para separar claramente **Frontend (Flutter)**, **Backend (.NET 8 Minimal APIs)** y **Esquema de Base de Datos**.
-
-### 🔗 Enlaces rápidos
-- 🗄️ **Base de Datos (Schema PostgreSQL):** [DataBase branch](https://github.com/jesussv/jc-scis-mopt/tree/DataBase)
-- 🧩 **Backend + Integración (Desarrollo):** [develop branch](https://github.com/jesussv/jc-scis-mopt/tree/develop)
-- 📱 **Frontend (Flutter):** [scis-frontend branch](https://github.com/jesussv/jc-scis-mopt/tree/scis-frontend)
-
 ---
-
-## 🧭 ¿Qué hay en cada rama?
-
-### 🗄️ `DataBase`
-Contiene el **script del esquema** y artefactos relacionados a base de datos.
-- 📄 Esquema principal: [`DataBase_schema.sql`](https://github.com/jesussv/jc-scis-mopt/blob/DataBase/DataBase_schema.sql)
-
-### ⚙️ `develop`
-Rama de trabajo para el **backend** y la integración general del sistema.
-- Contiene el proyecto **ASP.NET Core Minimal APIs (.NET 8)** y configuración para ejecución/despliegue.
-
-### 📱 `scis-frontend`
-Rama dedicada al **frontend móvil en Flutter**.
-- UI, navegación, consumo de API y componentes del cliente móvil y web.
-
----
-
-## ✅ Flujo recomendado de trabajo (Git)
-- Trabajar features desde `develop`: `feature/<nombre>`
-- Integrar vía Pull Request hacia `develop`
-- Promover a `main` cuando sea release/producción
-
 
 ## Selección de tecnologías
 
