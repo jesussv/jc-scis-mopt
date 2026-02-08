@@ -48,7 +48,7 @@
    </p>
 
 ## 4. 📥 Descarga de proyectos (Repositorios)
-## 📁 Estructura del repositorio (Ramas)
+### 📁 Estructura del repositorio (Ramas)
 
 Este repositorio está organizado por ramas para separar claramente **Frontend (Flutter)**, **Backend (.NET 8 Minimal APIs)** y **Esquema de Base de Datos**.
 
@@ -75,7 +75,7 @@ Rama dedicada al **frontend móvil en Flutter**.
 
 ---
 
-## ✅ Flujo recomendado de trabajo (Git)
+### ✅ Flujo recomendado de trabajo (Git)
 - Trabajar features desde `develop`: `feature/<nombre>`
 - Integrar vía Pull Request hacia `develop`
 - Promover a `main` cuando sea release/producción
